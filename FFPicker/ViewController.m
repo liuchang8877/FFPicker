@@ -22,6 +22,8 @@
     [self initThePickerAndLabel];
     
     [self initTheButton];
+    
+    [[NSUserDefaults standardUserDefaults]setBool:YES forKey:@"showOrNot"];
 }
 
 // init the FFPicker
@@ -43,7 +45,7 @@
 - (void)initTheButton
 {
     UIButton *myButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    myButton.frame = CGRectMake(60, 485, 200, 45);
+    myButton.frame = CGRectMake(60, 415, 200, 45);
     myButton.backgroundColor = [UIColor clearColor];
     [myButton setTitle:@"SHOW_HIDE" forState:UIControlStateNormal];
     myButton.titleLabel.font = [UIFont fontWithName:@"helvetica" size:18];
@@ -56,7 +58,7 @@
 //button action
 - (void)buttonTouchIn
 {
-    
+
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"showOrNot"]) {
         
         [myPicker showThePicker];
